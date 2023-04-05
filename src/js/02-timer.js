@@ -75,13 +75,10 @@ function addLeadingZero(value) {
 
 btnDate.addEventListener('click', () => {
     btnDate.setAttribute('disabled', 'true');
+    inputEl.setAttribute('disabled', 'true');
     timerId = setInterval(() => {
         dt = dt - 1000;
         const { days, hours, minutes, seconds } = convertMs(dt);
-     //   spValuedEl[0].textContent = String(days).padStart(2, "0");
-     //   spValuedEl[1].textContent = String(hours).padStart(2, "0");
-     //   spValuedEl[2].textContent = String(minutes).padStart(2, "0");
-     //   spValuedEl[3].textContent = String(seconds).padStart(2,"0");
         spValuedEl[0].textContent = addLeadingZero(days);
         spValuedEl[1].textContent = addLeadingZero(hours);
         spValuedEl[2].textContent = addLeadingZero(minutes);
@@ -89,6 +86,7 @@ btnDate.addEventListener('click', () => {
         if (dt < 1000) {
             clearInterval(timerId);
             btnDate.removeAttribute('disabled');
+            inputEl.setAttribute('disabled');
         };
     }, 1000);
  });

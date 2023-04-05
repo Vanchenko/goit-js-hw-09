@@ -31,14 +31,13 @@ function GenProm(evt) {
   for (let i = 1; i <= amount; i += 1) {
       createPromise(i, sumDelay)
         .then(({ pos, del }) => {
-          console.log(`✅ Fulfilled promise ${pos} in ${del}ms`);
           Notiflix.Notify.success(`✅ Fulfilled promise ${pos} in ${del}ms`);
         })
         .catch(({ pos, del }) => {
-          console.log(`❌ Rejected promise ${pos} in ${del}ms`);
           Notiflix.Notify.failure(`❌ Rejected promise ${pos} in ${del}ms`);
         })
-   sumDelay = sumDelay + step;
+    sumDelay = sumDelay + step;
+    console.log(sumDelay, i);
   };
   evt.currentTarget.reset();
 }
