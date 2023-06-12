@@ -26,7 +26,7 @@ function createPromise(pos, del) {
 
 function GenProm(evt) {
   evt.preventDefault();
- // console.dir(evt.currentTarget.elements);
+
   const amount = Number(evt.currentTarget.elements.amount.value);
   const step = Number(evt.currentTarget.elements.step.value);
   let sumDelay = Number(evt.currentTarget.elements.delay.value);
